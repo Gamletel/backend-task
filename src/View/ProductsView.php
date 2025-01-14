@@ -8,7 +8,7 @@ use Raketa\BackendTestTask\Repository\ProductRepository;
 readonly class ProductsView
 {
     public function __construct(
-        private ProductRepository $productRepository
+        private readonly ProductRepository $productRepository
     ) {
     }
 

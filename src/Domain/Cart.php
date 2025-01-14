@@ -8,9 +8,9 @@ final class Cart
 {
     public function __construct(
         readonly private string $uuid,
-        readonly private Customer $customer,
-        readonly private string $paymentMethod,
-        private array $items,
+        readonly private ?Customer $customer = null,
+        readonly private ?string $paymentMethod = null,
+        private ?array $items = null,
     ) {
     }
 
@@ -29,6 +29,10 @@ final class Cart
         return $this->paymentMethod;
     }
 
+    /**
+     * Summary of getItems
+     * @return array[CartItem]
+     */
     public function getItems(): array
     {
         return $this->items;

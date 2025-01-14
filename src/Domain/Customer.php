@@ -7,11 +7,11 @@ namespace Raketa\BackendTestTask\Domain;
 final readonly class Customer
 {
     public function __construct(
-        private int $id,
-        private string $firstName,
-        private string $lastName,
-        private string $middleName,
-        private string $email,
+        readonly private int $id,
+        readonly private string $firstName,
+        readonly private string $lastName,
+        readonly private string $middleName,
+        readonly private string $email,
     ) {
     }
 

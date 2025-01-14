@@ -14,13 +14,13 @@ class Connector
 
     public function __construct($redis)
     {
-        return $this->redis = $redis;
+        $this->redis = $redis;
     }
 
     /**
      * @throws ConnectorException
      */
-    public function get(Cart $key)
+    public function get(string $key)
     {
         try {
             return unserialize($this->redis->get($key));
@@ -39,10 +39,5 @@ class Connector
         } catch (RedisException $e) {
             throw new ConnectorException('Connector error', $e->getCode(), $e);
         }
-    }
-
-    public function has($key): bool
-    {
-        return $this->redis->exists($key);
     }
 }

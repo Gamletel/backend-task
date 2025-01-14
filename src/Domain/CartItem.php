@@ -7,10 +7,10 @@ namespace Raketa\BackendTestTask\Domain;
 final readonly class CartItem
 {
     public function __construct(
-        public string $uuid,
-        public string $productUuid,
-        public float $price,
-        public int $quantity,
+        readonly private string $uuid,
+        readonly private string $productUuid,
+        readonly private float $price,
+        readonly private int $quantity,
     ) {
     }
 
